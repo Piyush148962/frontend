@@ -1,0 +1,128 @@
+/* ---------------------------------------------------------
+   GLOBAL THEME + MODERN UI RESET
+--------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --card: rgba(255, 255, 255, 0.88);
+  --muted: #6b7280;
+  --border-glass: rgba(255, 255, 255, 0.45);
+}
+
+/* DARK THEME */
+:root[data-theme='dark'] {
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --card: rgba(15, 23, 42, 0.65);
+  --muted: #94a3b8;
+  --border-glass: rgba(255, 255, 255, 0.12);
+  color-scheme: dark;
+}
+
+/* ---------------------------------------------------------
+   RESET + SMOOTH TRANSITIONS
+--------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+
+  transition: background 0.15s ease,
+              border 0.15s ease,
+              box-shadow 0.15s ease,
+              transform 0.15s ease,
+              color 0.15s ease;
+}
+
+/* ---------------------------------------------------------
+   GLOBAL BODY
+--------------------------------------------------------- */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------------------------------------------------
+   SCROLLBAR
+--------------------------------------------------------- */
+
+.chat-scroll {
+  scrollbar-width: thin;
+}
+
+.chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.20);
+  border-radius: 12px;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* ---------------------------------------------------------
+   INPUT FOCUS
+--------------------------------------------------------- */
+
+input:focus {
+  outline: none;
+  border-color: #0ea5e9 !important;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.25);
+}
+
+/* Dark Mode Input */
+:root[data-theme='dark'] input {
+  background: #1e293b;
+  border-color: #334155;
+  color: white;
+}
+
+/* ---------------------------------------------------------
+   BUTTON INTERACTION
+--------------------------------------------------------- */
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ---------------------------------------------------------
+   IMAGE POLISH
+--------------------------------------------------------- */
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ---------------------------------------------------------
+   ANIMATIONS (Typing dots)
+--------------------------------------------------------- */
+
+@keyframes blink {
+  0% { opacity: 0.25; }
+  50% { opacity: 1; }
+  100% { opacity: 0.25; }
+}
